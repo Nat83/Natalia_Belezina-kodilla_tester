@@ -2,7 +2,6 @@ public class Colors {
     public void displayFullColorName() {
         String userSelected = UserDialogs.getUserColorSelection();
 
-
         switch (userSelected) {
             case "White":
                 System.out.println("White");

@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Random;
 
 public class RandomNumbers {
@@ -7,49 +5,47 @@ public class RandomNumbers {
     int min = 31;
 
     public void generateRandomNumbersUntilExceedSum() {
+
         Random random = new Random();
         int sum = 0;
-// int randomNumber = (int) (Math.random() * max);
 
-
-        while (sum <= 5000) {
+        while (sum <= 500) {
             int randomNumber = random.nextInt(31);
             setMaxRandomNumber(randomNumber);
             setMinRandomNumber(randomNumber);
 
-            System.out.println(getMaxRandomNumber());
-            System.out.println(getMinRandomNumber());
+            System.out.println(randomNumber);
+            System.out.println("Currently maximum random number is: " + getMaxRandomNumber());
+            System.out.println("Currently minimum random number is: " + getMinRandomNumber());
 
             sum = sum + randomNumber;
-
         }
+        System.out.println("Sum of random numbers already exceeded 500");
     }
 
-
-    public int getMaxRandomNumber(){
+    public int getMaxRandomNumber() {
         return max;
     }
 
-    public int getMinRandomNumber(){
+    public int getMinRandomNumber() {
         return min;
     }
 
-    public int setMaxRandomNumber(int randomNumber){
-        if(randomNumber > max) {
+    public int setMaxRandomNumber(int randomNumber) {
+        if (randomNumber > max) {
             max = randomNumber;
         }
-
         return max;
-
     }
 
-    public int setMinRandomNumber(int randomNumber){
-        if(randomNumber < min) {
+    public int setMinRandomNumber(int randomNumber) {
+        if (randomNumber < min) {
             min = randomNumber;
         }
-
         return min;
     }
+
+    // Moje pierwsze podejście do zadania:
 
 //    public ArrayList<Integer> listOfRandomNumbers;
 

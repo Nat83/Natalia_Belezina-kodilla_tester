@@ -3,20 +3,14 @@ import java.util.ArrayList;
 public class User {
     private String name;
     private int age;
-    public User(String name, int age){
+
+    public User(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-    public static void main(String[] args){
-                User zofia = new User("Zofia", 11);
+    public static void main(String[] args) {
+        User zofia = new User("Zofia", 11);
         User hania = new User("Hania", 13);
         User jan = new User("Jan", 39);
         User natalia = new User("Natalia", 40);
@@ -37,10 +31,18 @@ public class User {
         ArrayList<String> userNames = new ArrayList<String>();
 
         for (int i = 0; i < users.length; i++) {
-            if (users[i].getAge() < averageAge){
+            if (users[i].getAge() < averageAge) {
                 userNames.add(users[i].getName());
             }
         }
         System.out.println("Users names with age below average are: " + userNames.toString());
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
     }
 }

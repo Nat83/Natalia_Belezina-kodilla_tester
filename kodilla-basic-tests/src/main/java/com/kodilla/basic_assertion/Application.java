@@ -2,6 +2,7 @@ package com.kodilla.basic_assertion;
 
 public class Application {
     public static void main(String[] args) {
+
         int a = 5;
         int b = 8;
         double c = 3;
@@ -19,7 +20,6 @@ public class Application {
             System.out.println("Metoda sum nie działa poprawnie dla liczb " + a + " i " + b);
         }
 
-
         int subtractResult = calculator2.subtract(a, b);
         boolean correct2 = ResultChecker.assertEquals(-3, subtractResult);
         if (correct2) {
@@ -27,7 +27,6 @@ public class Application {
         } else {
             System.out.println("Metoda subtract nie działa poprawnie dla liczb " + a + " i " + b);
         }
-
 
         double riseToPowerResult = calculator3.riseToPower(c, d);
         boolean correct3 = ResultChecker.assertEquals2(9, riseToPowerResult);

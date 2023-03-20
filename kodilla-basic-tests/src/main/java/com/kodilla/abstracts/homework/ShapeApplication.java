@@ -15,7 +15,7 @@ public class ShapeApplication {
 
     private static void getShapeInfo(Shape shape) {
         System.out.println("Surface area of " + shape.getName() + " equals " + shape.getSurfaceArea() + ".");
-        System.out.println("Perimeter  of "+ shape.getName() + " equals " + shape.getPerimeter() + ".");
+        System.out.println("Perimeter  of " + shape.getName() + " equals " + shape.getPerimeter() + ".");
     }
 
 }

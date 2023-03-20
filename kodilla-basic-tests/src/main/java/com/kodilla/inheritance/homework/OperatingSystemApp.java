@@ -16,6 +16,3 @@ public class OperatingSystemApp {
         operatingSystem.turnOff();
     }
 }
-
-
-

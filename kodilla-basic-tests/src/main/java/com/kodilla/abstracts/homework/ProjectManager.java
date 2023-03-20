@@ -1,6 +1,6 @@
 package com.kodilla.abstracts.homework;
 
-public class ProjectManager extends Job{
+public class ProjectManager extends Job {
     @Override
     public void getResponsibilities() {
         System.out.println("Responsibilities of project manager are: managing and supporting team, preparing " +

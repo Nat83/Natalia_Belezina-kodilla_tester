@@ -1,6 +1,6 @@
 package com.kodilla.abstracts.homework;
 
-public class Tester extends Job{
+public class Tester extends Job {
     @Override
     public void getResponsibilities() {
         System.out.println("Responsibilities of tester are: planning and analysing tests, bug hunting, communicating " +

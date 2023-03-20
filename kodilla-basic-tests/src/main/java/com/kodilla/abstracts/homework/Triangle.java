@@ -1,11 +1,11 @@
 package com.kodilla.abstracts.homework;
 
-public class Triangle extends Shape{
+public class Triangle extends Shape {
 
-    private double triangleHigh;
-    private double triangleBase;
-    private double triangleSideA;
-    private double triangleSideB;
+    private final double triangleHigh;
+    private final double triangleBase;
+    private final double triangleSideA;
+    private final double triangleSideB;
 
     public Triangle(double triangleHigh, double triangleBase, double triangleSideA, double triangleSideB) {
         super("triangle");
@@ -14,7 +14,6 @@ public class Triangle extends Shape{
         this.triangleSideA = triangleSideA;
         this.triangleSideB = triangleSideB;
     }
-
 
     public double getSurfaceArea() {
         return 0.5 * triangleBase * triangleHigh;

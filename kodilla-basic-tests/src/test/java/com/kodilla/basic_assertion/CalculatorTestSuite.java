@@ -13,6 +13,7 @@ public class CalculatorTestSuite {
         int sumResult = calculator.sum(a, b);
         assertEquals(13, sumResult);
     }
+
     @Test
     public void testSubtract() {
         Calculator calculator = new Calculator();
@@ -21,13 +22,14 @@ public class CalculatorTestSuite {
         int subtractResult = calculator.subtract(a, b);
         assertEquals(-3, subtractResult);
     }
+
     @Test
     public void testRiseToPower() {
         Calculator calculator = new Calculator();
-        double a = 5.6;
-        double b= 1.8;
-        double delta = 0.5;
+        double a = 3.5;
+        double b = 4;
+        double delta = 0.0025;
         double riseToPowerResult = calculator.riseToPower(a, b);
-        assertEquals(9, riseToPowerResult, delta);
+        assertEquals(150.06, riseToPowerResult, delta);
     }
 }

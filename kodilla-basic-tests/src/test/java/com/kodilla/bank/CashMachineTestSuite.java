@@ -59,6 +59,7 @@ public class CashMachineTestSuite {
         int transactionsCount = cashMachine.getCashMachineTransactionsCount();
         assertEquals(4, transactionsCount);
     }
+
     @Test
     public void shouldReturnCorrectPaidInTransactionCount(){
         CashMachine cashMachine = new CashMachine();
@@ -98,6 +99,7 @@ public class CashMachineTestSuite {
         double AverageForPaidOutTransactions = cashMachine.getAverageForPaidOutTransactions();
         assertEquals(-25, AverageForPaidOutTransactions, 0.005);
     }
+
     @Test
     public void shouldReturnCorrectAverageForPaidInTransaction(){
         CashMachine cashMachine = new CashMachine();

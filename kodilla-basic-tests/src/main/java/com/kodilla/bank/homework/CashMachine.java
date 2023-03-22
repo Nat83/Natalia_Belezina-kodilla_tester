@@ -36,6 +36,7 @@ public class CashMachine {
         }
         return count;
     }
+
     public int getCashMachinePaidInTransactionsCount() {
         int count = 0;
         for (int i = 0; i < this.size; i++) {
@@ -44,6 +45,7 @@ public class CashMachine {
         }
         return count;
     }
+
     public int getCashMachinePaidOutTransactionsCount() {
 
         int count = 0;
@@ -63,6 +65,7 @@ public class CashMachine {
         }
         return averagePaidOut/getCashMachinePaidOutTransactionsCount();
     }
+
     public double getAverageForPaidInTransactions() {
 
         double averagePaidIn = 0;

@@ -1,7 +1,5 @@
 package com.kodilla.bank.homework;
 
-import com.kodilla.school.Grades;
-
 public class Bank {
     private CashMachine[] cashMachineTable;
     private int size;

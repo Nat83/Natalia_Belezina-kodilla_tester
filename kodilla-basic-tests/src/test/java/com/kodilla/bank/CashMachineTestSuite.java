@@ -1,22 +1,27 @@
 package com.kodilla.bank;
 
 import com.kodilla.bank.homework.CashMachine;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CashMachineTestSuite {
+    CashMachine cashMachine;
+
+    @BeforeEach
+    public void setUp(){
+        cashMachine = new CashMachine();
+    }
 
     @Test
     public void shouldHaveZeroLengthWhenNoTransaction() {
-        CashMachine cashMachine = new CashMachine();
         double[] transactionTable = cashMachine.getAllTransactions();
         assertEquals(0, transactionTable.length);
     }
 
     @Test
     public void shouldAddTwoTransaction() {
-        CashMachine cashMachine = new CashMachine();
         cashMachine.addTransaction(4564.63);
         cashMachine.addTransaction( -223.56);
 
@@ -28,7 +33,6 @@ public class CashMachineTestSuite {
 
     @Test
     public void shouldReturnCorrectCashMachineBalance(){
-        CashMachine cashMachine = new CashMachine();
         cashMachine.addTransaction(200.63);
         cashMachine.addTransaction( -3.63);
         cashMachine.addTransaction( 39.99);
@@ -39,7 +43,6 @@ public class CashMachineTestSuite {
 
     @Test
     public void shouldReturnNegativeCashMachineBalanceIfPaidOutTransactionExceedPaidIn(){
-        CashMachine cashMachine = new CashMachine();
         cashMachine.addTransaction(200.63);
         cashMachine.addTransaction( -300.63);
         cashMachine.addTransaction( 39.99);
@@ -50,7 +53,6 @@ public class CashMachineTestSuite {
 
     @Test
     public void shouldReturnCorrectTransactionCount(){
-        CashMachine cashMachine = new CashMachine();
         cashMachine.addTransaction(200.63);
         cashMachine.addTransaction( -3.63);
         cashMachine.addTransaction( 39.99);
@@ -62,7 +64,6 @@ public class CashMachineTestSuite {
 
     @Test
     public void shouldReturnCorrectPaidInTransactionCount(){
-        CashMachine cashMachine = new CashMachine();
         cashMachine.addTransaction(200.63);
         cashMachine.addTransaction( -3.63);
         cashMachine.addTransaction( 39.99);
@@ -74,7 +75,6 @@ public class CashMachineTestSuite {
 
     @Test
     public void shouldReturnCorrectPaidOutTransactionCount(){
-        CashMachine cashMachine = new CashMachine();
         cashMachine.addTransaction(200.63);
         cashMachine.addTransaction( -3.63);
         cashMachine.addTransaction( 39.99);
@@ -88,7 +88,6 @@ public class CashMachineTestSuite {
 
     @Test
     public void shouldReturnCorrectAverageForPaidOutTransaction(){
-        CashMachine cashMachine = new CashMachine();
         cashMachine.addTransaction(200.63);
         cashMachine.addTransaction( -25.00);
         cashMachine.addTransaction( 39.99);
@@ -102,7 +101,6 @@ public class CashMachineTestSuite {
 
     @Test
     public void shouldReturnCorrectAverageForPaidInTransaction(){
-        CashMachine cashMachine = new CashMachine();
         cashMachine.addTransaction(200.63);
         cashMachine.addTransaction( -25.00);
         cashMachine.addTransaction( 39.99);

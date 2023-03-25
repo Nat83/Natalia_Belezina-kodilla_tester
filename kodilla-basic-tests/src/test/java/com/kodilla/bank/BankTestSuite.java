@@ -2,18 +2,28 @@ package com.kodilla.bank;
 
 import com.kodilla.bank.homework.Bank;
 import com.kodilla.bank.homework.CashMachine;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BankTestSuite {
-    CashMachine mBank1 = new CashMachine();
-    CashMachine mBank2 = new CashMachine();
-    CashMachine mBank3 = new CashMachine();
+    Bank bank;
+    CashMachine mBank1;
+    CashMachine mBank2;
+    CashMachine mBank3;
+
+    @BeforeEach
+    public void setUp(){
+        bank = new Bank();
+        mBank1 = new CashMachine();
+        mBank2 = new CashMachine();
+        mBank3 = new CashMachine();
+    }
 
     @Test
     public void shouldDisplayTotalBalanceZeroIfNoTransactionAdded(){
-        Bank bank = new Bank();
+
         bank.addCashMachine(mBank1);
         bank.addCashMachine(mBank2);
         bank.addCashMachine(mBank3);
@@ -24,7 +34,6 @@ public class BankTestSuite {
 
     @Test
     public void shouldDisplayCorrectTotalBalance(){
-        Bank bank = new Bank();
         bank.addCashMachine(mBank1);
         bank.addCashMachine(mBank2);
         bank.addCashMachine(mBank3);
@@ -53,7 +62,6 @@ public class BankTestSuite {
 
     @Test
     public void shouldDisplayTotalCountOfPaidInTransactions(){
-        Bank bank = new Bank();
         bank.addCashMachine(mBank1);
         bank.addCashMachine(mBank2);
         bank.addCashMachine(mBank3);
@@ -79,7 +87,6 @@ public class BankTestSuite {
 
     @Test
     public void shouldDisplayCorrectTotalCountOfPaidOutTransactions(){
-        Bank bank = new Bank();
         bank.addCashMachine(mBank1);
         bank.addCashMachine(mBank2);
         bank.addCashMachine(mBank3);
@@ -94,13 +101,11 @@ public class BankTestSuite {
         mBank3.addTransaction(90.11);
         mBank3.addTransaction(-5.05);
 
-
         int totalCountOfPaidOutTransactions = bank.getTotalCountOfPaidOutTransactions();
         assertEquals(4, totalCountOfPaidOutTransactions);
     }
     @Test
     public void shouldDisplayCorrectTotalAverageForPaidInTransactions(){
-        Bank bank = new Bank();
         bank.addCashMachine(mBank1);
         bank.addCashMachine(mBank2);
         bank.addCashMachine(mBank3);
@@ -129,7 +134,6 @@ public class BankTestSuite {
 
     @Test
     public void shouldDisplayCorrectTotalAverageForPaidOutTransactions(){
-        Bank bank = new Bank();
         bank.addCashMachine(mBank1);
         bank.addCashMachine(mBank2);
         bank.addCashMachine(mBank3);

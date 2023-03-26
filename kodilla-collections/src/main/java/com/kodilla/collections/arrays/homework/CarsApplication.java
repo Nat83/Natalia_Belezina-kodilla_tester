@@ -11,7 +11,7 @@ public class CarsApplication {
     private static final Random RANDOM = new Random();
 
     public static void main(String[] args) {
-        Car[] cars = new Car[55];
+        Car[] cars = new Car[15];
         for (int n = 0; n < cars.length; n++)
             cars[n] = drawCar();
         for (Car car : cars)
@@ -20,7 +20,7 @@ public class CarsApplication {
 
     public static Car drawCar() {
 
-        int drawnCarKind = RANDOM.nextInt(3);     // possible values: 0, 1, 2
+        int drawnCarKind = RANDOM.nextInt(3);
         int a = getRandomSpeed();
         if (drawnCarKind == 0)
             return new Ford(a);

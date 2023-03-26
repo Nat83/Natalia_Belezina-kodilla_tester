@@ -6,11 +6,12 @@ import com.kodilla.collections.interfaces.homework.Opel;
 import com.kodilla.collections.interfaces.homework.Toyota;
 
 public class CarUtils {
-    public static void describeCar(Car car){
+    public static void describeCar(Car car) {
         System.out.println("-----------------------------");
         System.out.println("Car kind: " + getCarName(car));
         System.out.println("Car speed: " + car.getSpeed());
     }
+
     private static String getCarName(Car car) {
         if (car instanceof Opel)
             return "Opel";

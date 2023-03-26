@@ -2,8 +2,8 @@ package com.kodilla.collections.interfaces.homework;
 
 public class Toyota implements Car {
 
-    private int speed;
     private final String name = "Toyota";
+    private int speed;
 
     public Toyota(int speed) {
         this.speed = speed;

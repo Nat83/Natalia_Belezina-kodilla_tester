@@ -14,10 +14,11 @@ public class CarsApplication {
         Car[] cars = new Car[55];
         for (int n = 0; n < cars.length; n++)
             cars[n] = drawCar();
-        for ( Car car : cars)
+        for (Car car : cars)
             CarUtils.describeCar(car);
     }
-    public static Car drawCar(){
+
+    public static Car drawCar() {
 
         int drawnCarKind = RANDOM.nextInt(3);     // possible values: 0, 1, 2
         int a = getRandomSpeed();
@@ -31,6 +32,6 @@ public class CarsApplication {
     }
 
     private static int getRandomSpeed() {
-        return RANDOM.nextInt(100) ;
+        return RANDOM.nextInt(100);
     }
 }

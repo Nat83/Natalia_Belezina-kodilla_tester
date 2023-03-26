@@ -21,7 +21,7 @@ public class CarsListApplication {
         cars.remove(toyota);
 
         System.out.println(cars.size());
-        for (Car car: cars) {
+        for (Car car : cars) {
             CarUtils carUtils = new CarUtils();
             carUtils.describeCar(car);
         }

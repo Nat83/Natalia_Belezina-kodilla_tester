@@ -3,9 +3,9 @@ package com.kodilla.collections.sets.homework;
 import java.util.Objects;
 
 public class Stamp {
-    private String name;
-    private String size;
-    private boolean isStamped;
+    private final String name;
+    private final String size;
+    private final boolean isStamped;
 
     public Stamp(String name, String size, boolean isStamped) {
         this.name = name;

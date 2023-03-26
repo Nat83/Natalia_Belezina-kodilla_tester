@@ -17,16 +17,16 @@ public class Bank {
         this.cashMachineTable = newTab;
     }
 
-    public double getTotalCashMachineBalance(){
+    public double getTotalCashMachineBalance() {
         double totalBalance = 0;
 
-        for (int i =0; i< this.size; i++){
+        for (int i = 0; i < this.size; i++) {
             totalBalance = totalBalance + cashMachineTable[i].getCashMachineBalance();
         }
         return totalBalance;
     }
 
-    public int getTotalCountOfPaidOutTransactions(){
+    public int getTotalCountOfPaidOutTransactions() {
         int countOfPaidOut = 0;
         for (int i = 0; i < this.size; i++) {
             countOfPaidOut = countOfPaidOut + cashMachineTable[i].getCashMachinePaidOutTransactionsCount();
@@ -34,7 +34,7 @@ public class Bank {
         return countOfPaidOut;
     }
 
-    public int getTotalCountInPaidOutTransactions(){
+    public int getTotalCountInPaidOutTransactions() {
         int countInPaidOut = 0;
         for (int i = 0; i < this.size; i++) {
             countInPaidOut = countInPaidOut + cashMachineTable[i].getCashMachinePaidOutTransactionsCount();
@@ -42,19 +42,19 @@ public class Bank {
         return countInPaidOut;
     }
 
-    public double getAverageForTotalPaidOutTransactions(){
+    public double getAverageForTotalPaidOutTransactions() {
         double TotalForPaidOut = 0;
         for (int i = 0; i < this.size; i++) {
             TotalForPaidOut = TotalForPaidOut + cashMachineTable[i].getAverageForPaidOutTransactions();
         }
-        return TotalForPaidOut/this.size;
+        return TotalForPaidOut / this.size;
     }
 
-    public double getAverageForTotalPaidInTransactions(){
+    public double getAverageForTotalPaidInTransactions() {
         double totalForPaidIn = 0;
         for (int i = 0; i < this.size; i++) {
             totalForPaidIn = totalForPaidIn + cashMachineTable[i].getAverageForPaidInTransactions();
         }
-        return totalForPaidIn/this.size;
+        return totalForPaidIn / this.size;
     }
 }

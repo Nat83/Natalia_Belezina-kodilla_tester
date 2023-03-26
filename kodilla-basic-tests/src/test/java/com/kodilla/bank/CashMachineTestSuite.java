@@ -42,13 +42,12 @@ public class CashMachineTestSuite {
     }
 
     @Test
-    public void shouldReturnNegativeCashMachineBalanceIfPaidOutTransactionExceedPaidIn(){
+    public void shouldNotAllowNegativeBalance(){
         cashMachine.addTransaction(200.63);
         cashMachine.addTransaction( -300.63);
-        cashMachine.addTransaction( 39.99);
 
         double currentBalance = cashMachine.getCashMachineBalance();
-        assertEquals(-60.01, currentBalance);
+        assertEquals(200.63, currentBalance);
     }
 
     @Test

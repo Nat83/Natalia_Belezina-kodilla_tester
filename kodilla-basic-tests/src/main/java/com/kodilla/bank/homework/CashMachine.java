@@ -10,11 +10,18 @@ public class CashMachine {
     }
 
     public void addTransaction(double transactionValue) {
-        this.size++;
-        double[] newTab = new double[this.size];
-        System.arraycopy(transactionTable, 0, newTab, 0, transactionTable.length);
-        newTab[this.size - 1] = transactionValue;
-        this.transactionTable = newTab;
+
+        double currentBalance = this.getCashMachineBalance();
+        boolean isEnoughFunds = (currentBalance + transactionValue) >= 0;
+        if (isEnoughFunds) {
+            this.size++;
+            double[] newTab = new double[this.size];
+            System.arraycopy(transactionTable, 0, newTab, 0, transactionTable.length);
+            newTab[this.size - 1] = transactionValue;
+            this.transactionTable = newTab;
+        } else {
+            System.out.println("Not enough funds in cash machine");
+        }
     }
 
     public double[] getAllTransactions() {
@@ -30,18 +37,15 @@ public class CashMachine {
     }
 
     public int getCashMachineTransactionsCount() {
-        int count = 0;
-        for (int i = 0; i < this.size; i++) {
-            count++;
-        }
-        return count;
+        return this.size;
     }
 
     public int getCashMachinePaidInTransactionsCount() {
+
         int count = 0;
         for (int i = 0; i < this.size; i++) {
-            if(transactionTable[i] > 0)
-            count++;
+            if (transactionTable[i] > 0)
+                count++;
         }
         return count;
     }
@@ -51,28 +55,28 @@ public class CashMachine {
         int count = 0;
         for (int i = 0; i < this.size; i++) {
             if (transactionTable[i] < 0)
-            count++;
+                count++;
         }
         return count;
     }
 
     public double getAverageForPaidOutTransactions() {
 
-        double averagePaidOut = 0;
+        double sumPaidOut = 0;
         for (int i = 0; i < this.size; i++) {
             if (transactionTable[i] < 0)
-                averagePaidOut = (averagePaidOut + transactionTable[i]);
+                sumPaidOut = (sumPaidOut + transactionTable[i]);
         }
-        return averagePaidOut/getCashMachinePaidOutTransactionsCount();
+        return sumPaidOut / getCashMachinePaidOutTransactionsCount();
     }
 
     public double getAverageForPaidInTransactions() {
 
-        double averagePaidIn = 0;
+        double sumPaidIn = 0;
         for (int i = 0; i < this.size; i++) {
             if (transactionTable[i] > 0)
-                averagePaidIn = (averagePaidIn + transactionTable[i]);
+                sumPaidIn = (sumPaidIn + transactionTable[i]);
         }
-        return averagePaidIn/getCashMachinePaidInTransactionsCount();
+        return sumPaidIn / getCashMachinePaidInTransactionsCount();
     }
 }

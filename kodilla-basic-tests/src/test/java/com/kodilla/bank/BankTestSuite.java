@@ -23,7 +23,6 @@ public class BankTestSuite {
 
     @Test
     public void shouldDisplayTotalBalanceZeroIfNoTransactionAdded(){
-
         bank.addCashMachine(mBank1);
         bank.addCashMachine(mBank2);
         bank.addCashMachine(mBank3);
@@ -93,7 +92,7 @@ public class BankTestSuite {
 
         mBank1.addTransaction(532.23);
         mBank1.addTransaction(-345.00);
-        mBank1.addTransaction(-345.00);
+        mBank1.addTransaction(-35.00);
 
         mBank2.addTransaction(67.25);
         mBank2.addTransaction(-3.00);
@@ -104,6 +103,7 @@ public class BankTestSuite {
         int totalCountOfPaidOutTransactions = bank.getTotalCountOfPaidOutTransactions();
         assertEquals(4, totalCountOfPaidOutTransactions);
     }
+
     @Test
     public void shouldDisplayCorrectTotalAverageForPaidInTransactions(){
         bank.addCashMachine(mBank1);

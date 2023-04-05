@@ -6,5 +6,4 @@ public class TaskApplication {
         Task task = new Task("Do your homework ", 2);
         System.out.println("Task: " + task.title() + ", duration: " + task.duration());
     }
-
 }

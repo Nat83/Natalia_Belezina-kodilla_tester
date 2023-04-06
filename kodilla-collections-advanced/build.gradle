@@ -5,6 +5,7 @@ plugins {
 group 'com.kodilla'
 version '1.0-SNAPSHOT'
 
+
 repositories {
     mavenCentral()
 }
@@ -17,3 +18,5 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+sourceCompatibility = JavaVersion.VERSION_16
+targetCompatibility = JavaVersion.VERSION_16

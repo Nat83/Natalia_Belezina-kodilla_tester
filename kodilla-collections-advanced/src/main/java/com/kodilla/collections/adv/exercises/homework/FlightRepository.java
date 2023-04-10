@@ -1,10 +1,18 @@
 package com.kodilla.collections.adv.exercises.homework;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class FlightRepository {
-     static Map<Airport, List<Flight>> flightRepositoryMap = new HashMap<>();
-    public static List<Flight> getFlightsTable(Airport airport) {
+
+    public static void main(String[] args) {
+        FlightRepository flightRepository = new FlightRepository();
+        flightRepository.getFlightsTable("GDANSK");
+    }
+
+    public static List<Flight> getFlightsTable(String airport) {
 
         Flight flight = new Flight("WARSAW", "WROCLAW");
         Flight flight2 = new Flight("WARSAW", "KRAKOW");
@@ -13,47 +21,21 @@ public class FlightRepository {
         Flight flight5 = new Flight("KATOWICE", "WROCLAW");
         Flight flight6 = new Flight("WROCLAW", "WARSAW");
 
-        List<Flight> warsawFlightList = new ArrayList<>();
-        warsawFlightList.add(flight);
-        warsawFlightList.add(flight2);
-        warsawFlightList.add(flight3);
-        warsawFlightList.add(flight6);
-        System.out.println("Warsaw list: " + warsawFlightList);
+        List<Flight> allFlights = new ArrayList<>();
+        allFlights.add(flight);
+        allFlights.add(flight2);
+        allFlights.add(flight3);
+        allFlights.add(flight4);
+        allFlights.add(flight5);
+        allFlights.add(flight6);
 
-        List<Flight> wroclawFlightList = new ArrayList<>();
-        wroclawFlightList.add(flight);
-        wroclawFlightList.add(flight4);
-        wroclawFlightList.add(flight5);
-        wroclawFlightList.add(flight6);
-        System.out.println("Wroclaw list: " + wroclawFlightList);
-
-        List<Flight> lodzFlightList = new ArrayList<>();
-        lodzFlightList.add(flight3);
-        System.out.println("Lodz list: " + lodzFlightList);
-
-        List<Flight> katowiceFlightList = new ArrayList<>();
-        katowiceFlightList.add(flight4);
-        katowiceFlightList.add(flight5);
-        System.out.println("Katowice list: " + katowiceFlightList);
-
-        List<Flight> krakowFlightList = new ArrayList<>();
-        krakowFlightList.add(flight2);
-        System.out.println("Krakow list: " + krakowFlightList);
-
-
-        flightRepositoryMap.put(Airport.WARSAW, warsawFlightList);
-        flightRepositoryMap.put(Airport.WROCLAW, wroclawFlightList);
-        flightRepositoryMap.put(Airport.LODZ, lodzFlightList);
-        flightRepositoryMap.put(Airport.KATOWICE, katowiceFlightList);
-        flightRepositoryMap.put(Airport.KRAKOW,krakowFlightList);
-
-        for (Map.Entry<Airport, List<Flight>> tableRecord : flightRepositoryMap.entrySet()) {
-            List<Flight> flightListPerAirport = new ArrayList<>();
-
-            if (tableRecord.getKey().equals(airport)){
-                flightListPerAirport = tableRecord.getValue();
+        List<Flight> flightsPerAirport = new ArrayList<>();
+        for (Flight singleFlight : allFlights) {
+            if (airport.equals(singleFlight.getDeparture()) || airport.equals(singleFlight.getArrival())) {
+                flightsPerAirport.add(singleFlight);
             }
         }
-        return flightRepositoryMap.getOrDefault(airport,Collections.emptyList());
+//      System.out.println(Arrays.toString(flightsPerAirport.toArray()));
+        return flightsPerAirport;
     }
 }

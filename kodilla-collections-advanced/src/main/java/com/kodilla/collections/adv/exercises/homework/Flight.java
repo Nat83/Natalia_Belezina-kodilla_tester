@@ -1,29 +1,22 @@
 package com.kodilla.collections.adv.exercises.homework;
 
-
-
 import java.util.*;
 
 public class Flight {
 
-    private  Airport airport;
-    private static String departure;
-    private  static String arrival;
+    private  String departure;
+    private  String arrival;
 
     public Flight(String departure, String arrival) {
         this.departure = departure;
         this.arrival = arrival;
     }
 
-    public  Airport getAirport() {
-        return airport;
-    }
-
-    public static String getDeparture() {
+    public String getDeparture() {
         return departure;
     }
 
-    public static String getArrival() {
+    public String getArrival() {
         return arrival;
     }
 

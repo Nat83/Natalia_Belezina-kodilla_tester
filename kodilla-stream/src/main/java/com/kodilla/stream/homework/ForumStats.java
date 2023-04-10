@@ -19,10 +19,11 @@ public class ForumStats {
         averageNumberOfPostForUsersUnderAge(40, UsersRepository.getUsersList());
 
     }
-    public static double getAverageNumberOfPostForUsersOverOrEqualToAge(int age, List<User> users){
+
+    public static double getAverageNumberOfPostForUsersOverOrEqualToAge(int age, List<User> users) {
         double averageNumberOfPostForOlderUsers = users
                 .stream()
-                .filter(user -> user.getAge()>=age)
+                .filter(user -> user.getAge() >= age)
                 .mapToInt(user -> user.getNumberOfPost())
                 .average()
                 .getAsDouble();
@@ -30,15 +31,16 @@ public class ForumStats {
         return averageNumberOfPostForOlderUsers;
 
     }
-    public static double averageNumberOfPostForUsersUnderAge(int age, List<User> users){
+
+    public static double averageNumberOfPostForUsersUnderAge(int age, List<User> users) {
 
         double averageNumberOfPostForYoungerUsers = users
                 .stream()
-                .filter(user -> user.getAge()<age)
+                .filter(user -> user.getAge() < age)
                 .mapToInt(user -> user.getNumberOfPost())
                 .average()
                 .getAsDouble();
-            System.out.println(averageNumberOfPostForYoungerUsers);
-            return averageNumberOfPostForYoungerUsers;
+        System.out.println(averageNumberOfPostForYoungerUsers);
+        return averageNumberOfPostForYoungerUsers;
     }
 }

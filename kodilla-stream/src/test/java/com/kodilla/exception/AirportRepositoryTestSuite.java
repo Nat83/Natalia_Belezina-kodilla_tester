@@ -23,5 +23,4 @@ class AirportRepositoryTestSuite {
         // then
         assertThrows(AirportNotFoundException.class, () -> airportRepository.isAirportInUse("Vienna"));
     }
-
 }

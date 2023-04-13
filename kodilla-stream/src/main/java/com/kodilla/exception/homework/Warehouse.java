@@ -19,9 +19,10 @@ public class Warehouse {
 
     public Order getOrder(String number) throws OrderDoesntExistException {
 
-        orders.stream().filter(order -> order.getNumber().equals(number)).collect(Collectors.toList()).get(0);
-
-        throw new OrderDoesntExistException();
+        return orders
+                .stream()
+                .filter(order -> order.getNumber().equals(number))
+                .findFirst().orElseThrow(()-> new OrderDoesntExistException());
     }
 
     public List<Order> getOrders() {

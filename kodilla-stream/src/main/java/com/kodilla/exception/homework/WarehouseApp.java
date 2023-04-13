@@ -10,8 +10,9 @@ public class WarehouseApp {
         warehouse.addOrder(new Order("777"));
 
         try {
-            warehouse.getOrder("aa");
-        } catch (RuntimeException | OrderDoesntExistException e) {
+            warehouse.getOrder("777");
+            System.out.println("Order found");
+        } catch (OrderDoesntExistException e) {
             System.out.println("Given order does not exist");
         } finally {
             System.out.println("Please try again.");

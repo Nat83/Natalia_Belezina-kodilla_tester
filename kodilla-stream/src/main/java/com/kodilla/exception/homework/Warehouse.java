@@ -3,9 +3,9 @@ package com.kodilla.exception.homework;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Warehouse {
+
     private List<Order> orders;
 
     public Warehouse() {
@@ -22,7 +22,7 @@ public class Warehouse {
         return orders
                 .stream()
                 .filter(order -> order.getNumber().equals(number))
-                .findFirst().orElseThrow(()-> new OrderDoesntExistException());
+                .findFirst().orElseThrow(() -> new OrderDoesntExistException());
     }
 
     public List<Order> getOrders() {

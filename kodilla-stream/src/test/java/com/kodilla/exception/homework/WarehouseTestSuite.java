@@ -1,15 +1,26 @@
 package com.kodilla.exception.homework;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class WarehouseTestSuite {
 
+    Warehouse warehouse;
+
+    @BeforeEach
+    public void setUp(){
+        warehouse = new Warehouse();
+        warehouse.addOrder(new Order("2434"));
+        warehouse.addOrder(new Order("2456"));
+        warehouse.addOrder(new Order("666"));
+        warehouse.addOrder(new Order("777"));
+    }
+
     @Test
     public void testIsOrderFound() throws OrderDoesntExistException {
         // given
-        Warehouse warehouse = new Warehouse();
         // when
         Order searchedOrder = warehouse.getOrder("777");
         // then
@@ -17,11 +28,10 @@ class WarehouseTestSuite {
     }
 
     @Test
-    public void testIsOrderFound_withException() throws OrderDoesntExistException {
+    public void testIsOrderFound_withException() {
         // given
-        Warehouse warehouse = new Warehouse();
         // when
         // then
-        assertThrows(OrderDoesntExistException.class, () -> warehouse.getOrder("777"));
+        assertThrows(OrderDoesntExistException.class, () -> warehouse.getOrder("aaa"));
     }
 }

@@ -9,25 +9,18 @@ public class FlightRepository {
 
     public static void main(String[] args) {
         FlightRepository flightRepository = new FlightRepository();
-        flightRepository.getFlightsTable("GDANSK");
+        flightRepository.getFlightsTable("WARSAW");
     }
 
     public static List<Flight> getFlightsTable(String airport) {
-
-        Flight flight = new Flight("WARSAW", "WROCLAW");
-        Flight flight2 = new Flight("WARSAW", "KRAKOW");
-        Flight flight3 = new Flight("WARSAW", "LODZ");
-        Flight flight4 = new Flight("WROCLAW", "KATOWICE");
-        Flight flight5 = new Flight("KATOWICE", "WROCLAW");
-        Flight flight6 = new Flight("WROCLAW", "WARSAW");
-
         List<Flight> allFlights = new ArrayList<>();
-        allFlights.add(flight);
-        allFlights.add(flight2);
-        allFlights.add(flight3);
-        allFlights.add(flight4);
-        allFlights.add(flight5);
-        allFlights.add(flight6);
+
+        allFlights.add(new Flight("WARSAW", "WROCLAW"));
+        allFlights.add(new Flight("WARSAW", "KRAKOW"));
+        allFlights.add(new Flight("WARSAW", "LODZ"));
+        allFlights.add(new Flight("WROCLAW", "KATOWICE"));
+        allFlights.add(new Flight("KATOWICE", "WROCLAW"));
+        allFlights.add(new Flight("WROCLAW", "WARSAW"));
 
         List<Flight> flightsPerAirport = new ArrayList<>();
         for (Flight singleFlight : allFlights) {

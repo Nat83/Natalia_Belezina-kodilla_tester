@@ -25,6 +25,7 @@ class GamblingMachineTestSuite {
     @ParameterizedTest
     @CsvFileSource(resources = "/numbersOutOfScope.csv", numLinesToSkip = 1)
     public void returnErrorMessageWhenNumbersOutOfScope(Set<Integer> userNumbers) throws InvalidNumbersException {
-        assertEquals(new InvalidNumbersException(), gamblingMachine.howManyWins(userNumbers));
+        assertThrows(InvalidNumbersException.class, () -> gamblingMachine.howManyWins(userNumbers));
+//        assertEquals(new InvalidNumbersException(), gamblingMachine.howManyWins(userNumbers));
     }
 }

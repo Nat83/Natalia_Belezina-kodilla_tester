@@ -12,8 +12,19 @@ class GamblingMachineTestSuite {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/validatedUserNumbers.csv", numLinesToSkip = 1)
-    public void returnCorrectNumberOfWinsIfNumbersValidated
-            (Set<Integer> userNumbers) throws InvalidNumbersException {
-        assertTrue(gamblingMachine.howManyWins(userNumbers) < 6);
+    public void returnCorrectNumberOfWinsIfNumbersValidated(Set<Integer> userNumbers) throws InvalidNumbersException {
+        assertTrue(gamblingMachine.howManyWins(userNumbers) >0 && gamblingMachine.howManyWins(userNumbers) < 6);
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/numbersIncorrectSetSize.csv", numLinesToSkip = 1)
+    public void returnErrorMessageWhenTooManyNumbersInSet(Set<Integer> userNumbers) throws InvalidNumbersException {
+        assertEquals(new InvalidNumbersException(), gamblingMachine.howManyWins(userNumbers));
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/numbersOutOfScope.csv", numLinesToSkip = 1)
+    public void returnErrorMessageWhenNumbersOutOfScope(Set<Integer> userNumbers) throws InvalidNumbersException {
+        assertEquals(new InvalidNumbersException(), gamblingMachine.howManyWins(userNumbers));
     }
 }

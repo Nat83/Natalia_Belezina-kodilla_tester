@@ -12,12 +12,12 @@ public class Shop {
         this.listOfOrders.add(order);
     }
 
-    public List<Order> getOrdersOnDateRage(SimpleDateFormat dateFrom, SimpleDateFormat dateTo){
-        return listOfOrders.stream()
-                .filter(order -> order.getDate() >= dateFrom)
-                .filter(order -> order.getDate() <= dateTo )
-                .collect(Collectors.toList());
-    }
+//    public List<Order> getOrdersOnDateRage(SimpleDateFormat dateFrom, SimpleDateFormat dateTo){
+//        return listOfOrders.stream()
+//                .filter(order -> order.getDate() >= dateFrom)
+//                .filter(order -> order.getDate() <= dateTo )
+//                .collect(Collectors.toList());
+//    }
 
     public List<Order> getOrdersOnValueRage(double minValue, double maxValue){
         return listOfOrders.stream()

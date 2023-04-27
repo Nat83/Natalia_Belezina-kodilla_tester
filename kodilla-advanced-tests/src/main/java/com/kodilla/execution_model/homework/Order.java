@@ -5,10 +5,10 @@ import java.util.Date;
 
 public class Order {
     private double value;
-    private SimpleDateFormat date;
+    private String date;
     private String login;
 
-    public Order(double value, SimpleDateFormat date, String login) {
+    public Order(double value, String date, String login) {
         this.value = value;
         this.date = date;
         this.login = login;
@@ -18,7 +18,7 @@ public class Order {
         return value;
     }
 
-    public SimpleDateFormat getDate() {
+    public String getDate() {
         return date;
     }
 

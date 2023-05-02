@@ -2,14 +2,19 @@ package com.kodilla.execution_model.homework;
 
 import org.junit.jupiter.api.*;
 import java.text.ParseException;
+import java.time.LocalDate;
+import java.util.Date;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ShopTestSuite {
     Shop shop = new Shop();
-    Order order1 = new Order(20.05, "20/05/2023", "emuraczewski" );
-    Order order2 = new Order(8.45, "21/04/2023", "asokulska" );
-    Order order3 = new Order(15.75, "05/03/2023", "nbajor" );
-    ;
+    Date date1 = new Date(2023-05-20);
+    Date date2 = new Date(2023-04-21);
+    Date date3 = new Date(2023-03-05);
+    Order order1 = new Order(20.05, date1, "emuraczewski" );
+    Order order2 = new Order(8.45, date2, "asokulska" );
+    Order order3 = new Order(15.75, date3, "nbajor" );
 
     @BeforeAll
     public static void displayIntroMessage() {
@@ -43,7 +48,7 @@ class ShopTestSuite {
         Order chosenOrder = shop.getOrder(0);
         //Then
         assertEquals(20.05, chosenOrder.getValue());
-        assertEquals("20/05/2023", chosenOrder.getDate().toString());
+        assertEquals(date1, chosenOrder.getDate());
         assertEquals("emuraczewski", chosenOrder.getLogin());
     }
 
@@ -76,12 +81,13 @@ class ShopTestSuite {
         assertEquals(1, numberOfOrdersWithGivenValueRange);
     }
     @Test
-    public void shouldReturnCorrectOrdersInGivenDateRange () throws ParseException {
+    public void shouldReturnCorrectOrdersInGivenDateRange () {
+
         //Given
         int numberOfAllOrders = shop.getNumberOfOrders();
         //When
-        shop.getOrdersOnDateRage("01/04/2023", "30/05/2023");
-        int numberOfOrdersWithGivenDateRange = shop.getNumberOfOrders();
+        shop.getOrdersOnDateRage(new Date(2023-04-01), new Date(2023-05-30));
+        int numberOfOrdersWithGivenDateRange = shop.getOrdersOnDateRage(new Date(2023-04-01), new Date(2023-05-30)).size();
         //Then
         assertEquals(3, numberOfAllOrders);
         assertEquals(2, numberOfOrdersWithGivenDateRange);

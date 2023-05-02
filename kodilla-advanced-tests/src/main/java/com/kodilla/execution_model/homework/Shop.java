@@ -1,9 +1,5 @@
 package com.kodilla.execution_model.homework;
 
-import com.kodilla.execution_model.Item;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,25 +12,11 @@ public class Shop {
         this.listOfOrders.add(order);
     }
 
-    public List<Order> getOrdersOnDateRage(String dateFrom, String dateTo) throws ParseException {
-        SimpleDateFormat format = new SimpleDateFormat("DD/MM/YYYY");
-        Date date1 = format.parse(dateFrom);
-        Date date2 = format.parse(dateTo);
+    public List<Order> getOrdersOnDateRage(Date dateFrom, Date dateTo){
+
         return listOfOrders.stream()
-                .filter(order -> {
-                    try {
-                        return format.parse(order.getDate()).compareTo(date1) >= 0;
-                    } catch (ParseException e) {
-                        throw new RuntimeException(e);
-                    }
-                })
-                .filter(order -> {
-                    try {
-                        return format.parse(order.getDate()).compareTo(date2) <= 0;
-                    } catch (ParseException e) {
-                        throw new RuntimeException(e);
-                    }
-                })
+                .filter(order -> order.getDate().compareTo(dateFrom)>=0)
+                .filter(order -> order.getDate().compareTo(dateTo)<=0)
                 .collect(Collectors.toList());
     }
 

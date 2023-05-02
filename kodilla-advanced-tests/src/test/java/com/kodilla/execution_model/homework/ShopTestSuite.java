@@ -1,20 +1,22 @@
 package com.kodilla.execution_model.homework;
 
 import org.junit.jupiter.api.*;
+
 import java.text.ParseException;
-import java.time.LocalDate;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ShopTestSuite {
     Shop shop = new Shop();
-    Date date1 = new Date(2023-05-20);
-    Date date2 = new Date(2023-04-21);
-    Date date3 = new Date(2023-03-05);
-    Order order1 = new Order(20.05, date1, "emuraczewski" );
-    Order order2 = new Order(8.45, date2, "asokulska" );
-    Order order3 = new Order(15.75, date3, "nbajor" );
+    Date date1 = new Date(2023 - 05 - 20);
+    Date date2 = new Date(2023 - 04 - 21);
+    Date date3 = new Date(2023 - 03 - 05);
+    Date dateFrom1 = new Date(2023 - 04 - 01);
+    Date dateTo1 = new Date(2023 - 05 - 30);
+    Order order1 = new Order(20.05, date1, "emuraczewski");
+    Order order2 = new Order(8.45, date2, "asokulska");
+    Order order3 = new Order(15.75, date3, "nbajor");
 
     @BeforeAll
     public static void displayIntroMessage() {
@@ -30,7 +32,8 @@ class ShopTestSuite {
     public void initializeInvoice() {
         shop.addOrder(order1);
         shop.addOrder(order2);
-        shop.addOrder(order3);    }
+        shop.addOrder(order3);
+    }
 
     @Test
     public void shouldAddOrdersToShop() {
@@ -71,7 +74,7 @@ class ShopTestSuite {
     }
 
     @Test
-    public void shouldReturnCorrectOrdersInGivenValueRange (){
+    public void shouldReturnCorrectOrdersInGivenValueRange() {
         //Given
         int numberOfAllOrders = shop.getNumberOfOrders();
         //When
@@ -80,20 +83,21 @@ class ShopTestSuite {
         assertEquals(3, numberOfAllOrders);
         assertEquals(1, numberOfOrdersWithGivenValueRange);
     }
+
     @Test
-    public void shouldReturnCorrectOrdersInGivenDateRange () {
+    public void shouldReturnCorrectOrdersInGivenDateRange() throws ParseException {
 
         //Given
         int numberOfAllOrders = shop.getNumberOfOrders();
         //When
-        shop.getOrdersOnDateRage(new Date(2023-04-01), new Date(2023-05-30));
-        int numberOfOrdersWithGivenDateRange = shop.getOrdersOnDateRage(new Date(2023-04-01), new Date(2023-05-30)).size();
+        int numberOfOrdersWithGivenDateRange = shop.getOrdersOnDateRage(dateFrom1, dateTo1).size();
         //Then
         assertEquals(3, numberOfAllOrders);
         assertEquals(2, numberOfOrdersWithGivenDateRange);
     }
+
     @Test
-    public void shouldReturnCorrectSumOfAllOrders(){
+    public void shouldReturnCorrectSumOfAllOrders() {
         //Given
         //When
         double sumOfValuesOfAllOrders = shop.getSumOfAllOrdersValues();
@@ -105,5 +109,4 @@ class ShopTestSuite {
     public void resetValues() {
         System.out.println("Resetting values...");
     }
-
 }

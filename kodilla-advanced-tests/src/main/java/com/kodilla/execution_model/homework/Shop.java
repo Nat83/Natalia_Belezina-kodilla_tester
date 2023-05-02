@@ -1,5 +1,7 @@
 package com.kodilla.execution_model.homework;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -12,7 +14,7 @@ public class Shop {
         this.listOfOrders.add(order);
     }
 
-    public List<Order> getOrdersOnDateRage(Date dateFrom, Date dateTo){
+    public List<Order> getOrdersOnDateRage(Date dateFrom, Date dateTo) {
 
         return listOfOrders.stream()
                 .filter(order -> order.getDate().compareTo(dateFrom)>=0)

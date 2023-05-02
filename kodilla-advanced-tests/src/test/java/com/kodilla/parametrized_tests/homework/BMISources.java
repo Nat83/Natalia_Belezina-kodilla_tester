@@ -53,9 +53,9 @@ public class BMISources {
 
     static Stream<Arguments> providePersonsForIncorrectBMIZeroValues() throws InvalidDataException{
         return Stream.of(
-                Arguments.of(new Person(0, 0), new InvalidDataException()),
-                Arguments.of(new Person(160, 0), new InvalidDataException()),
-                Arguments.of(new Person(0, 60), new InvalidDataException())
+                Arguments.of(new Person(0, 0)),
+                Arguments.of(new Person(160, 0)),
+                Arguments.of(new Person(0, 60))
         );
     }
 }

@@ -21,8 +21,9 @@ class PersonTestSuite {
 
     @ParameterizedTest
     @MethodSource(value = "com.kodilla.parametrized_tests.homework.BMISources#providePersonsForIncorrectBMIZeroValues")
-    public void shouldReturnErrorWhenIncorrectWeightProvided(Person person, InvalidDataException expected) throws Exception {
-        if (person.getHeightInMeters()==0 && person.getWeightInKilogram()==0){
+    public void shouldReturnErrorWhenIncorrectWeightProvided(Person person) throws Exception {
+        if ((person.getHeightInMeters()==0 && person.getWeightInKilogram()==0) || (person.getWeightInKilogram()==0 ||
+                person.getHeightInMeters()==0)){
             throw new InvalidDataException();
         }
         assertThrows(InvalidDataException.class, () -> person.getBMI());

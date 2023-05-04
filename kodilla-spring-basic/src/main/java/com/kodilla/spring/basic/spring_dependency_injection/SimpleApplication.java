@@ -1,7 +1,10 @@
 package com.kodilla.spring.basic.spring_dependency_injection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
 
 @Component
 public class SimpleApplication {
@@ -10,18 +13,20 @@ public class SimpleApplication {
 
     //2. wstrzykiwanie zaleznosci poprzez pole
 //    @Autowired
-    private SkypeMessageService messageService;
+//    @Qualifier(value = "skypeMessageService")
+    @Resource(name = "skypeMessageService")
+    private MessageService messageService;
 
     //3. wstrzykiwanie zaleznosci poprzez setter
-    @Autowired
-    public SimpleApplication setMessageService(SkypeMessageService messageService) {
-        this.messageService = messageService;
-        return this;
-    }
+//    @Autowired
+//    public SimpleApplication setMessageService(MessageService messageService) {
+//        this.messageService = messageService;
+//        return this;
+//    }
     //1. wstrzykiwanie zaleznosci poprzez konstruktor
-//    private SkypeMessageService messageService;
+//    private MessageService messageService;
 //
-//    public SimpleApplication(SkypeMessageService messageService) {
+//    public SimpleApplication(MessageService messageService) {
 //        this.messageService = messageService;
 //    }
 

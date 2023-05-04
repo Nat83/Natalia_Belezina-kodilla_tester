@@ -29,10 +29,9 @@ class MobilePhoneTestSuite {
     }
 // Przyklad niepoprawnie uzytej klasy Mockito.
 // Wywolano jedna metode a druga inna jest weryfikowana - trzeba zweryfikowac wywolana metode
-    @Test
-    public void testVerificationFailure() {
-        myPhone.needsCharging();
-        Mockito.verify(myPhone).getFreeStorage();
-    }
-
+//    @Test
+//    public void testVerificationFailure() {
+//        myPhone.needsCharging();
+//        Mockito.verify(myPhone).getFreeStorage();
+//    }
 }

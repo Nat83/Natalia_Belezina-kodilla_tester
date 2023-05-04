@@ -51,8 +51,8 @@ class StringManipulatorTestSuite {
 //    }
 
     @ParameterizedTest
-//    @CsvSource(value = {"te,st:1", "..OtHEr :0", "E,V,e,n.t:3", "null :0", "A:0"}, delimiter = ':')
-    @CsvFileSource(resources = "/numbersOfCommas.csv", numLinesToSkip = 1)
+    @CsvSource(value = {"te,st:1", "..OtHEr :0", "E,V,e,n.t:3", "null :0", "A:0"}, delimiter = ':')
+//    @CsvFileSource(resources = "/numbersOfCommas.csv", numLinesToSkip = 1)
     public void shouldCountNumberOfCommas(String input, int expected) {
         assertEquals(expected, manipulator.countNumberOfCommas(input));
     }

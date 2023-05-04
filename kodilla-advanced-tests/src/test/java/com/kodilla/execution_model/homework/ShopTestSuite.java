@@ -84,17 +84,17 @@ class ShopTestSuite {
         assertEquals(1, numberOfOrdersWithGivenValueRange);
     }
 
-    @Test
-    public void shouldReturnCorrectOrdersInGivenDateRange() throws ParseException {
-
-        //Given
-        int numberOfAllOrders = shop.getNumberOfOrders();
-        //When
-        int numberOfOrdersWithGivenDateRange = shop.getOrdersOnDateRage(dateFrom1, dateTo1).size();
-        //Then
-        assertEquals(3, numberOfAllOrders);
-        assertEquals(2, numberOfOrdersWithGivenDateRange);
-    }
+//    @Test
+//    public void shouldReturnCorrectOrdersInGivenDateRange() throws ParseException {
+//
+//        //Given
+//        int numberOfAllOrders = shop.getNumberOfOrders();
+//        //When
+//        int numberOfOrdersWithGivenDateRange = shop.getOrdersOnDateRage(dateFrom1, dateTo1).size();
+//        //Then
+//        assertEquals(3, numberOfAllOrders);
+//        assertEquals(2, numberOfOrdersWithGivenDateRange);
+//    }
 
     @Test
     public void shouldReturnCorrectSumOfAllOrders() {

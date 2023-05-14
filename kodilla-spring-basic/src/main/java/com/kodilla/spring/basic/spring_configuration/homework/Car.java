@@ -4,5 +4,6 @@ import java.time.LocalTime;
 
 public interface Car {
     boolean hasHeadlightsTurnedOn(LocalTime hourFrom, LocalTime hourTo);
+
     String getCarType();
 }

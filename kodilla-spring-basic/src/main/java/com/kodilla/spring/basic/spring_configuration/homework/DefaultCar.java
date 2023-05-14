@@ -5,8 +5,7 @@ import java.time.LocalTime;
 public class DefaultCar implements Car {
 
     @Override
-    public boolean hasHeadlightsTurnedOn(LocalTime hourFrom, LocalTime hourTo)
-    {
+    public boolean hasHeadlightsTurnedOn(LocalTime hourFrom, LocalTime hourTo) {
         return false;
     }
 

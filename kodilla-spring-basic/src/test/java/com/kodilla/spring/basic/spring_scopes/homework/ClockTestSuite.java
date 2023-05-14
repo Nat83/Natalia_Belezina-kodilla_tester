@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ClockTestSuite {
 
     @Test
-    public void shouldCreateDifferentMultipleClockBeans() {
+    public void shouldCreateDifferentClockBeans() {
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
         Clock clockBean1 = context.getBean(Clock.class);
         Clock clockBean2 = context.getBean(Clock.class);

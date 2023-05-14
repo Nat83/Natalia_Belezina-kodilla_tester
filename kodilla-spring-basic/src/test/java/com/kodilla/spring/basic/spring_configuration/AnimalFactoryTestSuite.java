@@ -47,5 +47,4 @@ class AnimalFactoryTestSuite {
         List<String> possibleVoices = Arrays.asList("Bark bark", "Meow meow", "Quack quack");
         Assertions.assertTrue(possibleVoices.contains(voice));
     }
-
 }

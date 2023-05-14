@@ -1,6 +1,8 @@
 package com.kodilla.spring.basic.spring_configuration.homework;
 
+import java.time.LocalTime;
+
 public interface Car {
-    Boolean hasHeadlightsTurnedOn();
+    boolean hasHeadlightsTurnedOn(LocalTime hourFrom, LocalTime hourTo);
     String getCarType();
 }

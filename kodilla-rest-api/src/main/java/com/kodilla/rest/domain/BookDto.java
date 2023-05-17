@@ -27,6 +27,16 @@ public class BookDto {
         return Objects.hash(title, author);
     }
 
+    public BookDto setTitle(String title) {
+        this.title = title;
+        return this;
+    }
+
+    public BookDto setAuthor(String author) {
+        this.author = author;
+        return this;
+    }
+
     public String getTitle() { return title; }
 
     public String getAuthor() { return author; }

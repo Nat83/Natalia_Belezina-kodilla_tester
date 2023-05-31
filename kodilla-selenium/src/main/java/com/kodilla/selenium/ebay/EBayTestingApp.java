@@ -15,7 +15,7 @@ public class EBayTestingApp {
         searchField.sendKeys("Laptop");
         searchField.submit();
         // or pressing search button
-        WebElement searchButton = driver.findElement(By.id("gh-btn"));
-        searchButton.click();
+//        WebElement searchButton = driver.findElement(By.id("gh-btn"));
+//        searchButton.click();
     }
 }

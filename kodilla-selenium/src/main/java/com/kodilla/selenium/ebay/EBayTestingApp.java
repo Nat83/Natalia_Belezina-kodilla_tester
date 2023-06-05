@@ -7,8 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class EBayTestingApp {
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\betal\\Desktop\\bootcampKodilla\\selenium-drivers\\" +
-                "Chrome\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.ebay.com/");
         WebElement searchField = driver.findElement(By.id("gh-ac"));

@@ -46,8 +46,7 @@ public class AllegroTestingAppCssSelectors {
 //                .forEach(article -> System.out.println(article.getText()));
 
         //EBAY
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\betal\\Desktop\\bootcampKodilla\\selenium-drivers\\" +
-                "Chrome\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.ebay.pl/");
 

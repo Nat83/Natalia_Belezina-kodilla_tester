@@ -83,5 +83,4 @@ class KodillaStorePomTest {
     public void testDown() {
         driver.close();
     }
-
 }

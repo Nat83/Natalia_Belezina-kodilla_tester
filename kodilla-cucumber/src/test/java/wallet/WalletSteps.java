@@ -38,4 +38,9 @@ public class WalletSteps {
     public void cashier_will_reply(String message) {
         Assertions.assertEquals(message, cashier.getMessage(message));
     }
+
+    @Then("the balance of my wallet should be ${int}")
+    public void the_balance_of_my_wallet_should_be_$(Integer balance) {
+        Assertions.assertEquals( balance,  wallet.getBalance(), "Incorrect wallet balance");
+    }
 }

@@ -5,6 +5,7 @@ Feature: Cash Withdrawal
     When I request $30
     Then $30 should be dispensed
     And Cashier will reply "Here you are. Thank you for using our bank"
+    And the balance of my wallet should be $170
 
   Scenario: Successful withdrawal of all funds from a wallet in credit
     Given I have deposited $200 in my wallet

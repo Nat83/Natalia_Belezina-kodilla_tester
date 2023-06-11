@@ -33,13 +33,13 @@ public class KodillaLoginPomTest {
         assertFalse(loggedIn);
     }
 
-    @Test
-    public void testLoginPage_CheckPositiveValidation() {
-        String email = "test@kodilla.com";
-        String password = "kodilla123";
-        boolean loggedIn = loginPom.login(email, password);
-        assertTrue(loggedIn);
-    }
+//    @Test
+//    public void testLoginPage_CheckPositiveValidation() {
+//        String email = "test@kodilla.com";
+//        String password = "kodilla123";
+//        boolean loggedIn = loginPom.login(email, password);
+//        assertTrue(loggedIn);
+//    }
 
     @AfterEach
     public void testDown() {

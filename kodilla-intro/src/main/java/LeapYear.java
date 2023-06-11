@@ -5,10 +5,10 @@ public class LeapYear {
     }
 
     private static boolean isLeapYear(int year) {
-        if (year < -238) {
+        if (year < 1582) {
             System.out.println("The concept of a leap year did not exist yet!");
             return false;
-        } else if (year % 4 == 0 & year % 100 != 0) {
+        } else if (year % 4 == 0 && year % 100 != 0) {
             System.out.println("It is leap year");
             return true;
         } else {

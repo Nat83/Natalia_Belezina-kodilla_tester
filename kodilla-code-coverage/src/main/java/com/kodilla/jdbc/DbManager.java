@@ -6,27 +6,27 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class DbManager {
-    private Connection conn;                                 // [1]
-    private static DbManager dbManagerInstance;              // [2]
+    private Connection conn;
+    private static DbManager dbManagerInstance;
 
-    private DbManager() throws SQLException {                // [3]
-        Properties connectionProps = new Properties();        // [4]
-        connectionProps.put("user", "kodilla");          // [5]
-        connectionProps.put("password", "kodilla");  // [6]
+    private DbManager() throws SQLException {
+        Properties connectionProps = new Properties();
+        connectionProps.put("user", "kodilla");
+        connectionProps.put("password", "kodilla");
         conn = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/kodilla_tester?serverTimezone=Europe/Warsaw"
                         + "&useSSL=False",
-                connectionProps);             // [7]
-    }                                                       // [8]
+                connectionProps);
+    }
 
-    public static DbManager getInstance() throws SQLException {  // [9]
-        if (dbManagerInstance == null) {                          // [10]
-            dbManagerInstance = new DbManager();                   // [11]
-        }                                                         // [12]
-        return dbManagerInstance;                                 // [13]
-    }                                                           // [14]
+    public static DbManager getInstance() throws SQLException {
+        if (dbManagerInstance == null) {
+            dbManagerInstance = new DbManager();
+        }
+        return dbManagerInstance;
+    }
 
-    public Connection getConnection() {                          // [15]
-        return conn;                                             // [16]
-    }                                                            // [17]
+    public Connection getConnection() {
+        return conn;
+    }
 }

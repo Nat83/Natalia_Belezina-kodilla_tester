@@ -1,7 +1,5 @@
 package com.kodilla.hibernate.tasklist.repository;
 
-import com.kodilla.hibernate.task.Task;
-import com.kodilla.hibernate.task.repository.TaskRepository;
 import com.kodilla.hibernate.tasklist.TaskList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

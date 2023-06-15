@@ -11,10 +11,9 @@ import java.util.List;
 
 @SpringBootTest
 class TaskRepositoryTestSuite {
+    private static final String DESCRIPTION = "Test: Learn Hibernate";
     @Autowired
     private TaskRepository taskRepository;
-
-    private static final String DESCRIPTION = "Test: Learn Hibernate";
 
     @Test
     void testTaskRepositoryFindByDuration() {

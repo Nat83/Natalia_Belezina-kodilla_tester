@@ -12,6 +12,15 @@ public class Employee {
     private String firstname;
     private String lastname;
     private List<Company> companies = new ArrayList<>();
+
+    public Employee() {
+    }
+
+    public Employee(String firstname, String lastname) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "JOIN_EMPLOYEES_COMPANIES",
@@ -27,14 +36,6 @@ public class Employee {
         return this;
     }
 
-    public Employee() {
-    }
-
-    public Employee(String firstname, String lastname) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-    }
-
     @Id
     @GeneratedValue
     @NotNull
@@ -43,24 +44,24 @@ public class Employee {
         return id;
     }
 
+    private void setId(int id) {
+        this.id = id;
+    }
+
     @NotNull
     @Column(name = "FIRSTNAME")
     public String getFirstname() {
         return firstname;
     }
 
+    private void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
     @NotNull
     @Column(name = "LASTNAME")
     public String getLastname() {
         return lastname;
-    }
-
-    private void setId(int id) {
-        this.id = id;
-    }
-
-    private void setFirstname(String firstname) {
-        this.firstname = firstname;
     }
 
     private void setLastname(String lastname) {

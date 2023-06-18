@@ -15,6 +15,10 @@ public class Task {
     private int duration;
     private TaskFinancialDetails taskFinancialDetails;
     private TaskList taskList;
+
+    public Task() {
+    }
+
     @ManyToOne
     @JoinColumn(name = "TASKLIST_ID")
     public TaskList getTaskList() {
@@ -35,9 +39,6 @@ public class Task {
     public Task setTaskFinancialDetails(TaskFinancialDetails taskFinancialDetails) {
         this.taskFinancialDetails = taskFinancialDetails;
         return this;
-    }
-
-    public Task() {
     }
 
     public Task(String description, int duration) {

@@ -7,7 +7,6 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testcontainers.containers.BrowserWebDriverContainer;
-import org.testcontainers.containers.DefaultRecordingFileFactory;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.Network;
 import org.testcontainers.images.builder.ImageFromDockerfile;
@@ -17,7 +16,6 @@ import java.io.File;
 import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
-import static org.testcontainers.containers.BrowserWebDriverContainer.VncRecordingMode.RECORD_ALL;
 import static org.testcontainers.containers.BrowserWebDriverContainer.VncRecordingMode.SKIP;
 
 public class ApplicationTest {
@@ -44,9 +42,7 @@ public class ApplicationTest {
             new BrowserWebDriverContainer<>()
                     .withNetwork(network)
                     .withRecordingMode(SKIP, null)
-                    .withCapabilities(new ChromeOptions())
-                    .withRecordingMode(RECORD_ALL, new File("./build/"))
-                    .withRecordingFileFactory(new DefaultRecordingFileFactory());
+                    .withCapabilities(new ChromeOptions());
 
     @Test
     public void customImageTest() throws InterruptedException, IOException {
